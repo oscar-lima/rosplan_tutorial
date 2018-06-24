@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(gpsr_rosplan_example)
+project(rosplan_tutorial)
 
 find_package(catkin REQUIRED
  COMPONENTS

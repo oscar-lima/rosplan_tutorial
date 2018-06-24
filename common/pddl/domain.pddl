@@ -1,6 +1,6 @@
 (define (domain gpsr)
 
-  (:requirements :typing :action-costs)
+  (:requirements :typing :negative-preconditions)
 
   (:types
     location  ; service areas, points of interest, navigation goals
@@ -41,16 +41,12 @@
     (answered_question ?p - person ?l - location)
   )
 
-  (:functions
-     (total-cost) - number
-  )
-
   ; navigation action
   ; i.e. move to the hallway table
   (:action move_base
     :parameters (?source ?destination - location)
     :precondition  (at_r ?source)
-    :effect   (and (at_r ?destination) (not (at_r ?source)) (increase (total-cost) 2))
+    :effect   (and (at_r ?destination) (not (at_r ?source)))
   )
 
   ; manipulation action
@@ -58,7 +54,7 @@
   (:action grasp
     :parameters (?obj - object ?l - location)
     :precondition (and (at_r ?l) (on ?obj ?l) (found_obj ?obj) (gripper_empty))
-    :effect (and (holding ?obj) (not (on ?obj ?l)) (not (gripper_empty)) (not (found_obj ?obj)) (increase (total-cost) 1))
+    :effect (and (holding ?obj) (not (on ?obj ?l)) (not (gripper_empty)) (not (found_obj ?obj)))
   )
 
   ; manipulation action
@@ -67,7 +63,7 @@
   (:action place
     :parameters (?obj - object ?l - location)
     :precondition (and (at_r ?l) (holding ?obj) (not (gripper_empty)))
-    :effect (and (not (holding ?obj)) (on ?obj ?l) (gripper_empty) (increase (total-cost) 1))
+    :effect (and (not (holding ?obj)) (on ?obj ?l) (gripper_empty))
   )
 
   ; perception action
@@ -75,7 +71,7 @@
   (:action find_object
     :parameters (?obj - object ?l - location)
     :precondition (and (at_r ?l) (on ?obj ?l))
-    :effect (and (found_obj ?obj) (increase (total-cost) 1))
+    :effect (and (found_obj ?obj))
   )
 
   ; perception action
@@ -83,7 +79,7 @@
   (:action find_person
     :parameters (?p - person ?l - location)
     :precondition (and (at_r ?l) (at_p ?p ?l))
-    :effect (and (found_p ?p) (increase (total-cost) 1))
+    :effect (and (found_p ?p))
   )
 
   ; HRI - Navigation action
@@ -92,7 +88,7 @@
     :parameters (?p - person ?source ?destination - location)
     :precondition (and (at_p ?p ?source) (at_r ?source) (found_p ?p))
     :effect (and (at_p ?p ?destination) (at_r ?destination)
-                 (not (at_p ?p ?source)) (not (at_r ?source)) (increase (total-cost) 5))
+                 (not (at_p ?p ?source)) (not (at_r ?source)))
   )
 
   ; HRI action
@@ -100,7 +96,7 @@
   (:action tell
     :parameters (?s - sentence ?p - person ?l - location ?obj - object)
     :precondition (at_r ?l)
-    :effect (and (told ?s ?p ?l ?obj) (increase (total-cost) 1))
+    :effect (and (told ?s ?p ?l ?obj))
   )
 
   ; HRI action
@@ -108,7 +104,7 @@
   (:action follow
     :parameters (?p - person ?l - location)
     :precondition (and (at_p ?p ?l) (at_r ?l) (found_p ?p))
-    :effect (and (following ?p) (increase (total-cost) 5))
+    :effect (and (following ?p))
   )
 
   ; HRI action
@@ -116,6 +112,6 @@
   (:action answer
     :parameters (?p - person ?l - location)
     :precondition (and (at_r ?l) (found_p ?p))
-    :effect (and (answered_question ?p ?l) (increase (total-cost) 1))
+    :effect (and (answered_question ?p ?l))
   )
 )

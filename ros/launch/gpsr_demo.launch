@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<launch>
+    
+    <!-- GPSR: General Purpose Service Robot demo with ROSPlan -->
+
+    <!-- interfaces -->
+    <include file="$(find rosplan_planning_system)/launch/interfaced_planning_system.launch">
+    <!-- include file="$(find rosplan_tutorial)/ros/launch/ips.launch" -->
+        <arg name="domain_path" default="$(find rosplan_tutorial)/common/pddl/domain.pddl" />
+        <arg name="problem_path" default="$(find rosplan_tutorial)/common/pddl/problems/trivial.pddl" />
+    </include>
+
+    <!-- sim actions -->
+    <include file="$(find rosplan_tutorial)/ros/launch/simulated_action.launch" >
+	<arg name="pddl_action_name" value="move_base" />
+    </include>
+    <include file="$(find rosplan_tutorial)/ros/launch/simulated_action.launch" >
+	<arg name="pddl_action_name" value="grasp" />
+    </include>
+    <include file="$(find rosplan_tutorial)/ros/launch/simulated_action.launch" >
+	<arg name="pddl_action_name" value="place" />
+    </include>
+    <include file="$(find rosplan_tutorial)/ros/launch/simulated_action.launch" >
+	<arg name="pddl_action_name" value="find_object" />
+    </include>
+    <include file="$(find rosplan_tutorial)/ros/launch/simulated_action.launch" >
+	<arg name="pddl_action_name" value="find_person" />
+    </include>
+    <include file="$(find rosplan_tutorial)/ros/launch/simulated_action.launch" >
+	<arg name="pddl_action_name" value="guide" />
+    </include>
+    <include file="$(find rosplan_tutorial)/ros/launch/simulated_action.launch" >
+	<arg name="pddl_action_name" value="tell" />
+    </include>
+    <include file="$(find rosplan_tutorial)/ros/launch/simulated_action.launch" >
+	<arg name="pddl_action_name" value="follow" />
+    </include>
+    <include file="$(find rosplan_tutorial)/ros/launch/simulated_action.launch" >
+	<arg name="pddl_action_name" value="answer" />
+    </include>
+    
+</launch>
