@@ -1,0 +1,23 @@
+Attending a special request, a question received during ICAPS
+tutorial: is there robots using ROS for comercial applications?
+
+Answer: Yes! lots of them, here some links:
+
+Warehouse automation:
+https://www.magazino.eu/?lang=en
+https://fetchrobotics.com/
+
+Ground robots, marine robots and more (Canada)
+https://www.clearpathrobotics.com/
+
+Industry, automation robot collaborator:
+https://www.rethinkrobotics.com/baxter/
+
+Research platform for domestic environments Fraunhofer Institute in Stuttgart, Germany
+https://www.care-o-bot.de/en/care-o-bot-4.html
+
+Valkyrie Nasa superhero robot
+https://www.space.com/23929-nasa-valkyrie-humanoid-robot.html
+
+A list of robots that support ROS can be found under:
+https://robots.ros.org/
