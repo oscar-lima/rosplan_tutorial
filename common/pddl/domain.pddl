@@ -67,12 +67,10 @@
   )
 
   ; perception action
-  ; i.e. find a coke in the kitchen
-  (:action find_object
-    :parameters (?obj - object ?l - location)
-    :precondition (and (at_r ?l) (on ?obj ?l))
-    :effect (and (found_obj ?obj))
-  )
+  ; code find_object here !!!
+  ;(
+
+  ;)
 
   ; perception action
   ; i.e. find John in the kitchen

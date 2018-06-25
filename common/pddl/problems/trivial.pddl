@@ -17,7 +17,9 @@
 )
 	(:init
 		; the robot at start is in the entrance of the house
-		(at_r living_room)
+
+		; fact missing here !!!
+
 		(on coke kitchen)
 		(on beer kitchen)
 		(on remote living_room)

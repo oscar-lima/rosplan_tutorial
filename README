@@ -19,27 +19,38 @@ Step 3: Clone the tutorial git repository containing example files from SocRob@H
   cd rosplan_tutorial
   catkin build --this
 
-Step 4: Check the PDDL domain and problem and test it:
+Step 4: Fix PDDL domain:
+  roscd rosplan_tutorial/common/pddl
+  gedit domain.pddl
+  find and complete line:
+  ; code find_object here !!!
+
+Step 5: Fix PDDL problem instance:
+  roscd rosplan_tutorial/common/pddl
+  gedit problems/trivial.pddl
+  locate line: ; fact missing here !!!
+  add missing fact
+  
+Step 6: Check the PDDL domain and problem and test it:
   roscd rosplan_tutorial/common/pddl
   rosrun rosplan_planning_system popf domain.pddl problems/trivial.pddl
 
-Step 5: Launch the ROSPlan system:
+Step 7: Launch the ROSPlan system:
   roslaunch rosplan_tutorial gpsr_demo.launch
 
-Step 6: Test the problem generator:
+Step 8: Test the problem generator:
   rostopic echo /rosplan_problem_interface/problem_instance
   rosservice call /rosplan_problem_interface/problem_generation_server
 
-Step 7: Test the planner interface:
+Step 9: Test the planner interface:
   rostopic echo /rosplan_planner_interface/planner_output
   rosservice call /rosplan_planner_interface/planning_server
 
-Step 8: Test the plan parser:
+Step 10: Test the plan parser:
   rostopic echo /rosplan_parsing_interface/complete_plan
   rosservice call /rosplan_parsing_interface/parse_plan
 
-Step 9: Test the plan dispatcher:
+Step 11: Test the plan dispatcher:
   rostopic echo /rosplan_plan_dispatcher/action_dispatch
   rostopic echo /rosplan_plan_dispatcher/action_feedback
   rosservice call /rosplan_plan_dispatcher/dispatch_plan
-
