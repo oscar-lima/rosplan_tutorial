@@ -2,10 +2,10 @@
 Integrating Classical Planning and Mobile Service Robots using ROSPlan
 ----------------------------------------------------------------------
 Oscar Lima and Rodrigo Ventura (DFKI, Germany, IST, Univ. Lisbon)
-oscar.lima@dfki.de
-rodrigo.ventura@isr.tecnico.ulisboa.pt
 
-Tutorial website available [here](https://irsgroup.isr.tecnico.ulisboa.pt/tutorial-on-integrating-classical-planning-and-mobile-service-robots-using-rosplan/)
+oscar.lima@dfki.de, rodrigo.ventura@isr.tecnico.ulisboa.pt
+
+Tutorial website available [here](https://irsgroup.isr.tecnico.ulisboa.pt/tutorial-on-integrating-classical-planning-and-mobile-service-robots-using-rosplan/), slides available in website.
 
 # INSTRUCTIONS FOR THE HANDS-ON SESSION
 
