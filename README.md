@@ -5,7 +5,7 @@ Oscar Lima and Rodrigo Ventura (DFKI, Germany, IST, Univ. Lisbon)
 
 oscar.lima@dfki.de, rodrigo.ventura@isr.tecnico.ulisboa.pt
 
-Tutorial website available [here](https://irsgroup.isr.tecnico.ulisboa.pt/tutorial-on-integrating-classical-planning-and-mobile-service-robots-using-rosplan/), slides available in website.
+Tutorial website available [here](https://irsgroup.isr.tecnico.ulisboa.pt/tutorial-on-integrating-classical-planning-and-mobile-service-robots-using-rosplan/), tutorial slides available over there.
 
 # INSTRUCTIONS FOR THE HANDS-ON SESSION
 
